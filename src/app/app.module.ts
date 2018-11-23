@@ -17,7 +17,8 @@ const routervar:Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'password', component:PasswordComponent},
-  {path:'username', component:UsernameComponent}
+  {path:'username', component:UsernameComponent},
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
