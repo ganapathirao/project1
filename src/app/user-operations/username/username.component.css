@@ -1,0 +1,14 @@
+.forgot-pwd-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 50px);
+}
+.password-wrapper{
+    max-width: 630px;
+    background: #ddd;
+    padding: 30px;
+    text-align: center;
+    border-radius: 4px;
+}

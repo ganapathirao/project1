@@ -14,10 +14,11 @@
        
         <p class="help-block" *ngIf="password.invalid && password.touched">Invalid Password</p>
       </div>
-      <input type="submit" class="btn btn-success submit-btn" [disabled]="loginForm.invalid" (click)="showFormData(loginForm)">
-      <div class="d-flex justify-content-between">
-        <a href="password">Forgot Password ?</a>
-        <a href="username">Forgot Username ?</a>
+      <input type="submit" class="btn btn-success submit-btn" [disabled]="loginForm.invalid" (click)="showFormData(username, pwd)">
+      <div class="d-flex justify-content-between mt-2">
+        <a routerLink="/password">Forgot Password ?</a>
+        <a routerLink="/register">Register Here ?</a>
+        <a routerLink="/username">Forgot Username ?</a>
       </div>
     </form>
   </div>

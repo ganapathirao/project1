@@ -1,3 +1,11 @@
-<p>
-  username works!
-</p>
+<div class="forgot-pwd-wrapper">
+    <p class="text-success" *ngIf="passwordDone">your Username is {{yourUserName}}</p>
+    <div class="password-wrapper">
+      <h2>Enter your email address</h2>
+      <div class="form-group">
+        <input type="email" class="form-control mt-3" required email placeholder="enter email here" [(ngModel)]="email" #userEmail = "ngModel">
+        <p class="text-danger" *ngIf="!isUserValid">Invalid Email</p>
+        <input type="button" class="btn btn-primary mt-2" value="Get Password" [disabled]="userEmail.invalid" (click)="getUserName(email)">
+      </div>
+    </div>
+  </div> 

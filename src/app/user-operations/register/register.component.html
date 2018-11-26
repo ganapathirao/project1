@@ -1,3 +1,89 @@
-<p>
-  register works!
-</p>
+<section class="register-wrapper container">
+  <form #registerForm="ngForm">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="name">Name*</label>
+        <input type="text" id="name" class="form-control" name="name" [(ngModel)]="username" required>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <select class="form-control">
+          <option value="-1">Select Gender*</option>
+          <option value="male">Male</option>
+          <option value="female">FeMale</option>
+          <option value="transgender">Transgender</option>
+        </select>
+      </div>
+    </div>                                                                                          
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="address">Address*</label>
+        <input type="text" id="address" class="form-control" name="address" [(ngModel)]="address" required>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <select class="form-control" name="countrySelect" [(ngModel)]="country" (change)="changeState($event.target.value)">
+          <option value="-1">Select Country*</option>
+          <!-- <option value="india">India</option>
+          <option value="us">US</option>
+          <option value="uk">UK</option> -->
+          <option *ngFor="let country of countriesList" value="{{country.name}}">{{country.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <select class="form-control" (change)="changeCountry($event.target.value)">
+          <option value="-1">Select State*</option>
+          <!-- <option value="india">India</option>
+          <option value="us">US</option>
+          <option value="uk">UK</option> -->
+          <option *ngFor="let state of selectedStates" value="{{state}}">{{state}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <select class="form-control">
+          <option value="-1">Select country*</option>
+          <!-- <option value="india">India</option>
+          <option value="us">US</option>
+          <option value="uk">UK</option> -->
+          <option *ngFor="let country of selectedCountries" value="{{country}}">{{country}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" [(ngModel)]="pincode" name="pincode" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" [(ngModel)]="phone" name="phone" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="mobile">Mobile Number*</label>
+
+        <input type="text" id="mobile" class="form-control" name="mobile" [(ngModel)]="mobile" required>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email" required>
+      </div>
+    </div>
+    <div class="col-sm-12 text-center mt-4">
+      <input type="submit" class="btn btn-primary" [disabled]="registerForm.invalid" (click)="registerUser(registerForm)">
+    </div>
+  </div>
+</form>
+</section>
